@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Triforce_Heroes_Save_Editor.Classes;
 using Triforce_Heroes_Save_Editor.Dictionaries;
+using Triforce_Heroes_Save_Editor.Forms;
 
 namespace Triforce_Heroes_Save_Editor
 {
@@ -225,6 +226,11 @@ namespace Triforce_Heroes_Save_Editor
         {
             // Set the min number of rupees
             numRupees.Value = 0;
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new About()).ShowDialog();
         }
     }
 }

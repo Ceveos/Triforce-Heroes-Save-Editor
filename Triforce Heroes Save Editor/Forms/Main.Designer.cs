@@ -38,6 +38,8 @@
             this.maxMaterialsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.minMaterialsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maxRupeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.maxRupeesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.minRupeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tcMain = new System.Windows.Forms.TabControl();
@@ -57,8 +59,6 @@
             this.Materials = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ofdOpen = new System.Windows.Forms.OpenFileDialog();
-            this.maxRupeesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.minRupeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sfdSave = new System.Windows.Forms.SaveFileDialog();
             this.tsMain.SuspendLayout();
             this.tcMain.SuspendLayout();
@@ -99,7 +99,7 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -107,7 +107,7 @@
             // 
             this.saveToolStripMenuItem.Enabled = false;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -129,7 +129,7 @@
             this.maxMaterialsToolStripMenuItem1,
             this.minMaterialsToolStripMenuItem});
             this.maxMaterialsToolStripMenuItem.Name = "maxMaterialsToolStripMenuItem";
-            this.maxMaterialsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.maxMaterialsToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
             this.maxMaterialsToolStripMenuItem.Text = "Materials";
             // 
             // maxMaterialsToolStripMenuItem1
@@ -152,8 +152,22 @@
             this.maxRupeesToolStripMenuItem1,
             this.minRupeesToolStripMenuItem});
             this.maxRupeesToolStripMenuItem.Name = "maxRupeesToolStripMenuItem";
-            this.maxRupeesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.maxRupeesToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
             this.maxRupeesToolStripMenuItem.Text = "Rupees";
+            // 
+            // maxRupeesToolStripMenuItem1
+            // 
+            this.maxRupeesToolStripMenuItem1.Name = "maxRupeesToolStripMenuItem1";
+            this.maxRupeesToolStripMenuItem1.Size = new System.Drawing.Size(164, 26);
+            this.maxRupeesToolStripMenuItem1.Text = "Max Rupees";
+            this.maxRupeesToolStripMenuItem1.Click += new System.EventHandler(this.maxRupeesToolStripMenuItem1_Click);
+            // 
+            // minRupeesToolStripMenuItem
+            // 
+            this.minRupeesToolStripMenuItem.Name = "minRupeesToolStripMenuItem";
+            this.minRupeesToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
+            this.minRupeesToolStripMenuItem.Text = "Min Rupees";
+            this.minRupeesToolStripMenuItem.Click += new System.EventHandler(this.minRupeesToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton2
             // 
@@ -171,6 +185,7 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // tcMain
             // 
@@ -361,20 +376,6 @@
             // ofdOpen
             // 
             this.ofdOpen.Filter = "Save Data|SaveData.bin";
-            // 
-            // maxRupeesToolStripMenuItem1
-            // 
-            this.maxRupeesToolStripMenuItem1.Name = "maxRupeesToolStripMenuItem1";
-            this.maxRupeesToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
-            this.maxRupeesToolStripMenuItem1.Text = "Max Rupees";
-            this.maxRupeesToolStripMenuItem1.Click += new System.EventHandler(this.maxRupeesToolStripMenuItem1_Click);
-            // 
-            // minRupeesToolStripMenuItem
-            // 
-            this.minRupeesToolStripMenuItem.Name = "minRupeesToolStripMenuItem";
-            this.minRupeesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.minRupeesToolStripMenuItem.Text = "Min Rupees";
-            this.minRupeesToolStripMenuItem.Click += new System.EventHandler(this.minRupeesToolStripMenuItem_Click);
             // 
             // sfdSave
             // 
