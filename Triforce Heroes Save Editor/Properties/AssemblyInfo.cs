@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Triforce Heroes Save Editor")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Fafaffy")]
 [assembly: AssemblyProduct("Triforce Heroes Save Editor")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.45")]
-[assembly: AssemblyFileVersion("1.0.0.45")]
+[assembly: AssemblyVersion("1.0.0.48")]
+[assembly: AssemblyFileVersion("1.0.0.48")]

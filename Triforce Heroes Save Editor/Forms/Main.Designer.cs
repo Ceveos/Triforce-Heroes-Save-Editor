@@ -388,6 +388,7 @@
             this.ClientSize = new System.Drawing.Size(472, 333);
             this.Controls.Add(this.tcMain);
             this.Controls.Add(this.tsMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Triforce Heroes Save Editor (by Fafaffy)";
