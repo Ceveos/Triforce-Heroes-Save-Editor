@@ -56,10 +56,10 @@
             this.keyItem = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tbMaterial = new System.Windows.Forms.TabPage();
             this.dgMaterials = new System.Windows.Forms.DataGridView();
-            this.Materials = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ofdOpen = new System.Windows.Forms.OpenFileDialog();
             this.sfdSave = new System.Windows.Forms.SaveFileDialog();
+            this.Materials = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tsMain.SuspendLayout();
             this.tcMain.SuspendLayout();
             this.tpGeneral.SuspendLayout();
@@ -129,20 +129,20 @@
             this.maxMaterialsToolStripMenuItem1,
             this.minMaterialsToolStripMenuItem});
             this.maxMaterialsToolStripMenuItem.Name = "maxMaterialsToolStripMenuItem";
-            this.maxMaterialsToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.maxMaterialsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.maxMaterialsToolStripMenuItem.Text = "Materials";
             // 
             // maxMaterialsToolStripMenuItem1
             // 
             this.maxMaterialsToolStripMenuItem1.Name = "maxMaterialsToolStripMenuItem1";
-            this.maxMaterialsToolStripMenuItem1.Size = new System.Drawing.Size(177, 26);
+            this.maxMaterialsToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
             this.maxMaterialsToolStripMenuItem1.Text = "Max Materials";
             this.maxMaterialsToolStripMenuItem1.Click += new System.EventHandler(this.maxMaterialsToolStripMenuItem1_Click);
             // 
             // minMaterialsToolStripMenuItem
             // 
             this.minMaterialsToolStripMenuItem.Name = "minMaterialsToolStripMenuItem";
-            this.minMaterialsToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.minMaterialsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.minMaterialsToolStripMenuItem.Text = "Min Materials";
             this.minMaterialsToolStripMenuItem.Click += new System.EventHandler(this.minMaterialsToolStripMenuItem_Click);
             // 
@@ -152,7 +152,7 @@
             this.maxRupeesToolStripMenuItem1,
             this.minRupeesToolStripMenuItem});
             this.maxRupeesToolStripMenuItem.Name = "maxRupeesToolStripMenuItem";
-            this.maxRupeesToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.maxRupeesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.maxRupeesToolStripMenuItem.Text = "Rupees";
             // 
             // maxRupeesToolStripMenuItem1
@@ -183,7 +183,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(125, 26);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -359,6 +359,14 @@
             this.dgMaterials.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgMaterials_CellEndEdit);
             this.dgMaterials.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgMaterials_CellValidating);
             // 
+            // ofdOpen
+            // 
+            this.ofdOpen.Filter = "Save Data|SaveData.bin";
+            // 
+            // sfdSave
+            // 
+            this.sfdSave.Filter = "Save Data|SaveData.bin";
+            // 
             // Materials
             // 
             this.Materials.DataPropertyName = "Material";
@@ -370,16 +378,8 @@
             // 
             this.Quantity.DataPropertyName = "Quantity";
             this.Quantity.HeaderText = "Quantity";
-            this.Quantity.MaxInputLength = 3;
+            this.Quantity.MaxInputLength = 2;
             this.Quantity.Name = "Quantity";
-            // 
-            // ofdOpen
-            // 
-            this.ofdOpen.Filter = "Save Data|SaveData.bin";
-            // 
-            // sfdSave
-            // 
-            this.sfdSave.Filter = "Save Data|SaveData.bin";
             // 
             // Main
             // 
@@ -432,8 +432,6 @@
         private System.Windows.Forms.ToolStripMenuItem maxMaterialsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem maxRupeesToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgMaterials;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Materials;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.ListView lvKeyItems;
         private System.Windows.Forms.ColumnHeader keyItem;
         private System.Windows.Forms.ToolStripMenuItem maxMaterialsToolStripMenuItem1;
@@ -441,6 +439,8 @@
         private System.Windows.Forms.ToolStripMenuItem maxRupeesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem minRupeesToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog sfdSave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Materials;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
     }
 }
 

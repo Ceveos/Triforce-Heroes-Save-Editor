@@ -187,8 +187,8 @@ namespace Triforce_Heroes_Save_Editor
                 // No negatives or greater than 0xFF
                 if (val < 0)
                     _dtMaterialsTable.Rows[e.RowIndex][e.ColumnIndex] = "0";
-                else if (val > 255)
-                    _dtMaterialsTable.Rows[e.RowIndex][e.ColumnIndex] = "255";
+                else if (val > 99)
+                    _dtMaterialsTable.Rows[e.RowIndex][e.ColumnIndex] = "99";
 
             }
             else
@@ -203,7 +203,7 @@ namespace Triforce_Heroes_Save_Editor
             // Set the max materials
             for (var i = 0; i < _dtMaterialsTable.Rows.Count; i++)
             {
-                _dtMaterialsTable.Rows[i]["Quantity"] = @"255";
+                _dtMaterialsTable.Rows[i]["Quantity"] = @"99";
             }
         }
 
