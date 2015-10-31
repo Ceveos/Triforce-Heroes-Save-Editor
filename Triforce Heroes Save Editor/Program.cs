@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Triforce_Heroes_Save_Editor.Forms;
 
 namespace Triforce_Heroes_Save_Editor
 {

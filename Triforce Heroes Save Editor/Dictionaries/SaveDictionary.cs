@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Net.Configuration;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Triforce_Heroes_Save_Editor.Dictionaries
 {
@@ -82,6 +86,88 @@ namespace Triforce_Heroes_Save_Editor.Dictionaries
             { 0x232, "Lady's Parasol" }
         };
 
-        public static int RupeeLocation = 0x2B0; // Rupee's are from 0x2B0-0x2B3
+
+        public static Dictionary<CostumeOffsets, string> CostumeDictionary = new Dictionary<CostumeOffsets, string>
+        {
+            { new CostumeOffsets(0x00, 0x838), "Bear Minimum"},
+            { new CostumeOffsets(0x01, 0x83C), "Sword Link"},
+            { new CostumeOffsets(0x02, 0x840), "Kokiri Clothes"},
+            { new CostumeOffsets(0x03, 0x844), "Legendary Dress"},
+            { new CostumeOffsets(0x04, 0x848), "Showstopper"},
+            { new CostumeOffsets(0x05, 0x84C), "Goron Garb"},
+            { new CostumeOffsets(0x06, 0x850), "Zora Costume"},
+            { new CostumeOffsets(0x07, 0x854), "Queen of Hearts"},
+            { new CostumeOffsets(0x08, 0x858), "Big Bomb Outfit"},
+            { new CostumeOffsets(0x09, 0x85C), "Energy Gear"},
+            { new CostumeOffsets(0x0A, 0x860), "Cozy Parka"},
+            { new CostumeOffsets(0x0B, 0x864), "Spin Attack Attire"},
+            { new CostumeOffsets(0x0C, 0x868), "Ninja Gi"},
+            { new CostumeOffsets(0x0D, 0x86C), "Rupee Regalia"},
+            { new CostumeOffsets(0x0E, 0x870), "Boomeranger"},
+            { new CostumeOffsets(0x0F, 0x874), "Tri Suit"},
+            { new CostumeOffsets(0x10, 0x878), "Lucky Loungewear"},
+            { new CostumeOffsets(0x11, 0x87C), "Torrent Robe"},
+            { new CostumeOffsets(0x12, 0x880, true), "Lady's Ensemble"}, // Key costume
+            { new CostumeOffsets(0x13, 0x884, true), "Cursed Tights"}, // Key costume
+            { new CostumeOffsets(0x14, 0x888), "Timeless Tunic"},
+            { new CostumeOffsets(0x15, 0x88C), "Light Armour"},
+            { new CostumeOffsets(0x16, 0x890), "Cheetah Costume"},
+            { new CostumeOffsets(0x17, 0x894), "Jack of Hearts"},
+            { new CostumeOffsets(0x18, 0x898), "Hero's Tunic"},
+            { new CostumeOffsets(0x19, 0x89C), "Gust Garb"},
+            { new CostumeOffsets(0x1A, 0x8A0), "Hammerwear"},
+            { new CostumeOffsets(0x1B, 0x8A4), "Dunewalker Duds"},
+            { new CostumeOffsets(0x1C, 0x8A8), "Robo Wear"},
+            { new CostumeOffsets(0x1D, 0x8AC), "Fire Blazer"},
+            { new CostumeOffsets(0x1E, 0x8B0), "Tingle Tights"},
+            { new CostumeOffsets(0x1F, 0x8B4), "Serpent's Toga"},
+            { new CostumeOffsets(0x20, 0x8B8), "Sword Master"},
+            { new CostumeOffsets(0x21, 0x8BC), "Dapper Spinner"},
+            { new CostumeOffsets(0x22, 0x8C0), "Cheerleader"},
+            { new CostumeOffsets(0x23, 0x8C4), "Cacto Clothes"},
+        };
+
+
+        public static class Constants
+        {
+            public static int CurrentCostumeLocation = 0x2B4;
+            public static int PurchasedCostumeLocation = 0x2A8;
+            public static int UnlockedCostumeLocation = 0x4D0;
+            public static int NewIconCostumeLocation = 0x4D8;
+            public static int RupeeLocation = 0x2B0; // Rupee's are from 0x2B0-0x2B3
+        }
+
+    }
+
+    /// <summary>
+    /// Contains two fields for a given item
+    /// For example, a costume can have a hex value associated,
+    /// along with a bitflag value.
+    /// </summary>
+    public class CostumeOffsets
+    {
+        // Value of the costume. Used for the current costume and bitflags
+        public int CurrentCostumeValue;
+
+        // Where in the save file is the costume located?
+        public int CostumeUnlockedHex;
+
+        public bool KeyCostume;
+
+        // Default constructor
+        public CostumeOffsets()
+        {
+            this.CurrentCostumeValue = 0x0;
+            this.CostumeUnlockedHex = 0x0;
+        }
+
+        // Overloaded constructor
+        public CostumeOffsets(int currentCostumeOffset, int costumeUnlockedHex, bool keyCostume = false)
+        {
+            this.CurrentCostumeValue = currentCostumeOffset;
+            this.CostumeUnlockedHex = costumeUnlockedHex;
+            this.KeyCostume = keyCostume;
+        }
+
     }
 }
