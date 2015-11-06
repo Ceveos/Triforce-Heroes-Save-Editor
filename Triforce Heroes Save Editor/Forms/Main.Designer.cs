@@ -74,8 +74,11 @@
             this.CostumeVisible = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.NewIconFlag = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.CostumePurchased = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.ofdOpen = new System.Windows.Forms.OpenFileDialog();
             this.sfdSave = new System.Windows.Forms.SaveFileDialog();
+            this.cbVoice = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.tsMain.SuspendLayout();
             this.tcMain.SuspendLayout();
             this.tpGeneral.SuspendLayout();
@@ -117,7 +120,7 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -125,7 +128,7 @@
             // 
             this.saveToolStripMenuItem.Enabled = false;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -148,20 +151,20 @@
             this.maxMaterialsToolStripMenuItem1,
             this.minMaterialsToolStripMenuItem});
             this.maxMaterialsToolStripMenuItem.Name = "maxMaterialsToolStripMenuItem";
-            this.maxMaterialsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.maxMaterialsToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
             this.maxMaterialsToolStripMenuItem.Text = "Materials";
             // 
             // maxMaterialsToolStripMenuItem1
             // 
             this.maxMaterialsToolStripMenuItem1.Name = "maxMaterialsToolStripMenuItem1";
-            this.maxMaterialsToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.maxMaterialsToolStripMenuItem1.Size = new System.Drawing.Size(177, 26);
             this.maxMaterialsToolStripMenuItem1.Text = "Max Materials";
             this.maxMaterialsToolStripMenuItem1.Click += new System.EventHandler(this.maxMaterialsToolStripMenuItem1_Click);
             // 
             // minMaterialsToolStripMenuItem
             // 
             this.minMaterialsToolStripMenuItem.Name = "minMaterialsToolStripMenuItem";
-            this.minMaterialsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.minMaterialsToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
             this.minMaterialsToolStripMenuItem.Text = "Min Materials";
             this.minMaterialsToolStripMenuItem.Click += new System.EventHandler(this.minMaterialsToolStripMenuItem_Click);
             // 
@@ -171,7 +174,7 @@
             this.maxRupeesToolStripMenuItem1,
             this.minRupeesToolStripMenuItem});
             this.maxRupeesToolStripMenuItem.Name = "maxRupeesToolStripMenuItem";
-            this.maxRupeesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.maxRupeesToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
             this.maxRupeesToolStripMenuItem.Text = "Rupees";
             // 
             // maxRupeesToolStripMenuItem1
@@ -195,7 +198,7 @@
             this.purchaseToolStripMenuItem,
             this.newIconToolStripMenuItem});
             this.costumesToolStripMenuItem.Name = "costumesToolStripMenuItem";
-            this.costumesToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.costumesToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
             this.costumesToolStripMenuItem.Text = "Costumes";
             // 
             // unlockAllCostumesToolStripMenuItem
@@ -276,6 +279,7 @@
             this.tcMain.Controls.Add(this.tbKeyItems);
             this.tcMain.Controls.Add(this.tbMaterial);
             this.tcMain.Controls.Add(this.tbCostumes);
+            this.tcMain.Controls.Add(this.tabPage1);
             this.tcMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcMain.Location = new System.Drawing.Point(0, 27);
             this.tcMain.Name = "tcMain";
@@ -307,13 +311,16 @@
             this.tableLayoutPanel1.Controls.Add(this.numRupees, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.cbCostumes, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cbVoice, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(517, 271);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -353,7 +360,7 @@
             0,
             0});
             this.numRupees.Name = "numRupees";
-            this.numRupees.Size = new System.Drawing.Size(147, 22);
+            this.numRupees.Size = new System.Drawing.Size(195, 22);
             this.numRupees.TabIndex = 4;
             // 
             // cbCostumes
@@ -362,7 +369,7 @@
             this.cbCostumes.FormattingEnabled = true;
             this.cbCostumes.Location = new System.Drawing.Point(127, 59);
             this.cbCostumes.Name = "cbCostumes";
-            this.cbCostumes.Size = new System.Drawing.Size(147, 24);
+            this.cbCostumes.Size = new System.Drawing.Size(195, 24);
             this.cbCostumes.TabIndex = 5;
             // 
             // label4
@@ -539,6 +546,15 @@
             this.CostumePurchased.Name = "CostumePurchased";
             this.CostumePurchased.Width = 82;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(523, 277);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "World";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // ofdOpen
             // 
             this.ofdOpen.Filter = "Save Data|SaveData.bin";
@@ -546,6 +562,24 @@
             // sfdSave
             // 
             this.sfdSave.Filter = "Save Data|SaveData.bin";
+            // 
+            // cbVoice
+            // 
+            this.cbVoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbVoice.FormattingEnabled = true;
+            this.cbVoice.Location = new System.Drawing.Point(127, 89);
+            this.cbVoice.Name = "cbVoice";
+            this.cbVoice.Size = new System.Drawing.Size(195, 24);
+            this.cbVoice.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 86);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(98, 17);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Current Voice:";
             // 
             // Main
             // 
@@ -627,6 +661,9 @@
         private System.Windows.Forms.ToolStripMenuItem newIconToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem makeAllCostumesNewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeNewCostumeFlagsToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.ComboBox cbVoice;
+        private System.Windows.Forms.Label label5;
     }
 }
 

@@ -86,6 +86,13 @@ namespace Triforce_Heroes_Save_Editor.Dictionaries
             { 0x232, "Lady's Parasol" }
         };
 
+        public static Dictionary<int, string> VoicesDictionary = new Dictionary<int, string>
+        {
+            { 0x00, "Link Between Worlds" },
+            { 0x01, "Wind Waker" },
+            { 0x02, "Ocarina of Time/Majoras Mask" },
+            { 0x03, "Spirit Tracks" }
+        };
 
         public static Dictionary<CostumeOffsets, string> CostumeDictionary = new Dictionary<CostumeOffsets, string>
         {
@@ -130,6 +137,7 @@ namespace Triforce_Heroes_Save_Editor.Dictionaries
 
         public static class Constants
         {
+            public static int CurrentVoiceLocation = 0x37C;
             public static int CurrentCostumeLocation = 0x2B4;
             public static int PurchasedCostumeLocation = 0x2A8;
             public static int UnlockedCostumeLocation = 0x4D0;

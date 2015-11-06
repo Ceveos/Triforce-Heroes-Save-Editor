@@ -15,6 +15,7 @@ namespace Triforce_Heroes_Save_Editor.Forms
         private byte[] _saveData;
         private readonly DataTable _dtMaterialsTable;
         private readonly DataTable _dtCostumesTable;
+        private readonly DataTable _dtVoicesTable;
 
         public Main()
         {
@@ -44,10 +45,19 @@ namespace Triforce_Heroes_Save_Editor.Forms
             dgCostumes.AutoGenerateColumns = false;
             // Set the data source
             dgCostumes.DataSource = _dtCostumesTable;
-            // Set info for combobox
+            // Set info for costume combobox
             cbCostumes.DataSource = _dtCostumesTable;
             cbCostumes.DisplayMember = "Name";
             cbCostumes.ValueMember = "CurrentCostumeValue";
+
+            _dtVoicesTable = new DataTable();
+            // Add columns for voices data table
+            _dtVoicesTable.Columns.Add("Name");
+            _dtVoicesTable.Columns.Add("Value");
+            cbVoice.DataSource = _dtVoicesTable;
+            // Set info for voice combobox
+            cbVoice.DisplayMember = "Name";
+            cbVoice.ValueMember = "Value";
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -156,6 +166,21 @@ namespace Triforce_Heroes_Save_Editor.Forms
                 cbCostumes.Text = $"0x{currentCostume:X2} - ?";
             }
 
+
+            // Voice loading
+            _dtVoicesTable.Clear();
+            // Load all voices
+            foreach (var voice in SaveDictionary.VoicesDictionary)
+            {
+                var item = _dtVoicesTable.NewRow();
+                item["Name"] = voice.Value;
+                item["Value"] = voice.Key;
+                _dtVoicesTable.Rows.Add(item);
+            }
+            // Set voice
+            cbVoice.SelectedValue = _saveData[SaveDictionary.Constants.CurrentVoiceLocation];
+
+
             #endregion
 
             #region Key Items
@@ -195,7 +220,10 @@ namespace Triforce_Heroes_Save_Editor.Forms
 
             // Save rupees
             BitConverter.GetBytes((int)numRupees.Value).CopyTo(_saveData, 0x2B0);
-            
+
+            // Save current voice
+            _saveData[SaveDictionary.Constants.CurrentVoiceLocation] = byte.Parse((string)cbVoice.SelectedValue);
+
             // Save current costume
             _saveData[SaveDictionary.Constants.CurrentCostumeLocation] = byte.Parse((string)cbCostumes.SelectedValue);
             #endregion
@@ -260,19 +288,19 @@ namespace Triforce_Heroes_Save_Editor.Forms
             // Temporary integer
             int val;
             // They entered a valid number
-            if (int.TryParse((string)_dtMaterialsTable.Rows[e.RowIndex][e.ColumnIndex], out val))
+            if (int.TryParse((string)_dtMaterialsTable.Rows[e.RowIndex]["Quantity"], out val))
             {
                 // No negatives or greater than 0xFF
                 if (val < 0)
-                    _dtMaterialsTable.Rows[e.RowIndex][e.ColumnIndex] = "0";
+                    _dtMaterialsTable.Rows[e.RowIndex]["Quantity"] = "0";
                 else if (val > 99)
-                    _dtMaterialsTable.Rows[e.RowIndex][e.ColumnIndex] = "99";
+                    _dtMaterialsTable.Rows[e.RowIndex]["Quantity"] = "99";
 
             }
             else
             {
                 // Invalid number
-                _dtMaterialsTable.Rows[e.RowIndex][e.ColumnIndex] = "0";
+                _dtMaterialsTable.Rows[e.RowIndex]["Quantity"] = "0";
             }
         }
 
